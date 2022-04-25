@@ -6,7 +6,7 @@ if($_SESSION[user] == NULL){
     exit();
 }
 $_SESSION[lst] = 0;
-$connection = mysqli_connect('127.0.0.1', 'root', 'database0422!', 'justchat');
+$connection = mysqli_connect('127.0.0.1', 'root', 'password', 'justchat');
 $array = ["'",'"',"@"," ", "/", "|", "\\", "*", ":", "<", ">"];
 $login = str_replace($array, "", trim($_GET[u]));
 ?>

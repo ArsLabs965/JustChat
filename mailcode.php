@@ -5,7 +5,7 @@ if($_SESSION[user] == NULL){
     header("Location: http://" . $_SERVER['SERVER_NAME']);
     exit();
 }
-$connection = mysqli_connect('127.0.0.1', 'root', 'database0422!', 'justchat');
+$connection = mysqli_connect('127.0.0.1', 'root', 'password', 'justchat');
 if(isset($_POST[send])){
     if($_POST[code] == $_SESSION[code]){
         mysqli_query($connection, "UPDATE `accaunts` SET `mail` = '$_SESSION[mail]' WHERE `login` = '$_SESSION[user]'");

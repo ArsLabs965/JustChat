@@ -5,7 +5,7 @@ if($_SESSION[user] == NULL){
     header("Location: http://" . $_SERVER['SERVER_NAME']);
     exit();
 }
-$connection = mysqli_connect('127.0.0.1', 'root', 'database0422!', 'justchat');
+$connection = mysqli_connect('127.0.0.1', 'root', 'password', 'justchat');
 $array = ["'",'"',"@"," ", "/", "|", "\\", "*", ":", "<", ">"];
 $login = str_replace($array, "", trim($_GET[u]));
 $arrayp = ["'",'"'];
@@ -125,12 +125,12 @@ $email = $_POST['user_email'];
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.yandex.ru';  																							// Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'admin@3019.ru'; // Ваш логин от почты с которой будут отправляться письма
-$mail->Password = '20042212As!'; // Ваш пароль от почты с которой будут отправляться письма
+$mail->Username = 'MAIL'; // Ваш логин от почты с которой будут отправляться письма
+$mail->Password = 'PASSWORD'; // Ваш пароль от почты с которой будут отправляться письма
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465; // TCP port to connect to / этот порт может отличаться у других провайдеров
 
-$mail->setFrom('admin@3019.ru'); // от кого будет уходить письмо?
+$mail->setFrom('MAIL'); // от кого будет уходить письмо?
 $mail->addAddress($mailu);     // Кому будет уходить письмо 
 //$mail->addAddress('ellen@example.com');               // Name is optional
 //$mail->addReplyTo('info@example.com', 'Information');
